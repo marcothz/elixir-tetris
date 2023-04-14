@@ -16,4 +16,19 @@ defmodule BrickTest do
     assert actual.reflection in [true, false]
   end
 
+  test "Should manipulate brick" do
+    actual = 
+      new()
+      |> left
+      |> right
+      |> right
+      |> down
+      |> spin
+      |> spin
+
+    assert actual.location == {41, 1}
+    assert actual.rotation == 180
+  end
+
+
 end
